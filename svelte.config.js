@@ -11,10 +11,10 @@ const config = {
 			// default options are shown. On some platforms
 			// these options are set automatically — see below
 			pages: 'build',
-			assets: 'build',
-			fallback: undefined,
-			precompress: false,
-			strict: false
+			assets: 'build'
+			// fallback: undefined,
+			// precompress: false,
+			// strict: false
 		})
 	},
 	preprocess: vitePreprocess()
