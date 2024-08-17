@@ -3,6 +3,7 @@
 	import Navbar from './Navbar.svelte';
 	import Footer from './Footer.svelte';
 	export const prerender = true;
+	export const trailingSlash = 'always';
 </script>
 
 <Navbar />
