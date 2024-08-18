@@ -42,5 +42,8 @@
 	"dependencies": {
 		"@tailwindcss/typography": "^0.5.14",
 		"daisyui": "^4.12.10"
+	},
+	"engines": {
+		"node": "^18.18.0 || ^20.9.0 || >=21.1.0"
 	}
 }
