@@ -5,6 +5,7 @@
 	let cells = [];
 	let loading = true; // Add a loading state
 	let letters = ['B', 'I', 'N', 'G', 'O'];
+	let showModal = false; // Add a state to control the modal visibility
 	let winningPositions = [
 		[0, 1, 2, 3, 4],
 		[5, 6, 7, 8, 9],
@@ -54,10 +55,13 @@
 			updateLetters();
 
 			if (countWinningCombinations() === 5) {
-				alert('B I N G O');
-				location.reload();
+				showModal = true; // Show the modal
 			}
 		}
+	}
+	function closeModal() {
+		showModal = false;
+		location.reload(); // Reload the page when the modal is closed
 	}
 
 	onMount(async () => {
@@ -116,6 +120,18 @@
 		</tr>
 	</table>
 </div>
+{#if showModal}
+	<div class="modal modal-open">
+		<div class="modal-box">
+			<h2 class="font-bold text-2xl">BINGO!</h2>
+			<p class="py-4">Thanks for Playing Basement Yard Bingo & Supporting the Basement Boys!</p>
+			<div class="modal-action">
+				<button class="btn" on:click={closeModal}>Close</button>
+			</div>
+		</div>
+		<button class="modal-backdrop" on:click={closeModal}></button>
+	</div>
+{/if}
 
 <style>
 	.strikeout {

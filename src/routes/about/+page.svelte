@@ -2,65 +2,60 @@
 	<title>The Basement Yard Bingo | About</title>
 </svelte:head>
 
-<div class="mx-auto my-10">
-	<p class="text-4xl text-center">About</p>
-	<p class="text-2xl py-4">About This Project</p>
-	<p class="py-2 font-bold">Welcome to our customizable Bingo game template! 🎉</p>
-
-	<p>
-		This project is designed to be a versatile and fun way to create custom Bingo games related to
-		your favorite TV shows, podcasts, YouTube videos, or any other content you love. Whether you’re
-		a fan of popular series, engaging podcasts, or entertaining YouTube channels, this template
-		allows you to create a personalized Bingo experience.
-	</p>
-
-	<p class="text-2xl py-4">Key Features</p>
-	<ul class="list-disc ps-6 space-y-1">
-		<li>
-			<span class="font-bold">Customizable Content</span>: Easily create Bingo cards with phrases or
-			keywords specific to your favorite content. Whether it’s catchphrases from a podcast,
-			recurring themes in a TV show, or memorable moments from YouTube videos, you can tailor the
-			Bingo cards to fit any theme.
-		</li>
-		<li>
-			<span class="font-bold">Single Page Application</span>: Built as a single page application
-			(SPA), this project ensures a smooth and seamless user experience. All interactions happen on
-			one page, making it easy to play and enjoy.
-		</li>
-		<li>
-			<span class="font-bold">Free Hosting</span>: The project is designed to be exported and hosted
-			for free, allowing you to share your custom Bingo games with friends and family without any
-			cost.
-		</li>
-		<li>
-			<span class="font-bold">Sveltekit</span>: Developed using Sveltekit, the project is compiled
-			down to vanilla JavaScript, ensuring optimal performance and a lightweight footprint.
-		</li>
-	</ul>
-	<p class="text-2xl py-4">How It Works</p>
-	<ul class="list-decimal ps-6 space-y-1">
-		<li>
-			Create Your Phrases: Start by creating a list of phrases or keywords related to your chosen
-			theme. These can be anything from character names and quotes to specific events or topics.
-		</li>
-		<li>
-			Generate Bingo Cards: The template will randomly select phrases from your list to populate the
-			Bingo cards. Each game will have a unique set of phrases, adding to the excitement.
-		</li>
-		<li>
-			Play and Enjoy: Share the Bingo game with your friends and enjoy playing together. Mark off
-			phrases as you hear or see them, and be the first to shout “Bingo!”
-		</li>
-	</ul>
-	<p class="text-2xl py-4">Get Started</p>
-	<div class="space-y-2">
-		<p>
-			Ready to create your custom Bingo game? Simply follow the instructions provided in the project
-			documentation, and you’ll be up and running in no time. Have fun and happy Bingo playing!
+<div class="mx-auto my-10 flex flex-col container">
+	<p class="text-4xl mb-4 text-center font-anton">About</p>
+	<p class="text-xl py-2 font-bold text-center">🎉 Welcome to Basement Yard Bingo 🎉</p>
+	<div class="w-[80%] mx-auto">
+		<p class="py-2 text-center text-justify">
+			As a long-time viewer/listener of The Basement Yard podcast I have been looking for an
+			opportunity to give back to the community that has arisen around one of the most entertaining
+			shows on the internet. And I have heard the idea thrown around a couple times before of
+			playing The Basement Yard Bingo, but didn't decide to act on it until the section below for
+			their August 12th, 2024, podcast below:
 		</p>
-		<p>
-			Feel free to customize this content further to match your project’s tone and style. If you
-			need any more help, just let me know!
+		<div class="mx-8 aspect-w-16 aspect-h-9">
+			<iframe
+				class="self-center"
+				width="560"
+				height="315"
+				src="https://www.youtube.com/embed/v9SsDIPqDSU?si=PpapPApn9qLuvMw0&amp;start=710"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+		</div>
+		<p class="py-2 text-center text-justify">
+			So, I created this custom website take suggestions from the video, the comments, and other
+			places (which I will credit below) to populate the board with new and updated references for
+			the show. This website can be dynamically populated to grow with the show and powered by the
+			awesome community they have garnered. Speaking of which I got many of the board moments from
+			other amazing and talented members of the community before me like:
+		</p>
+		<ul class="ps-5 list-disc space-y-2">
+			<li>
+				<a href="https://www.instagram.com/p/C-S-1fbvLBH/" target="_blank"
+					>Emmy Howe - With the Original IG version</a
+				>
+			</li>
+			<li>
+				<a
+					href="https://www.reddit.com/r/TheBasementYard/comments/1eurd5v/basement_yard_bingo/"
+					target="_blank"
+					>Spiderversetheorist – Who beat my reddit post by a day!
+				</a>
+			</li>
+		</ul>
+		<p class="py-2 text-center text-justify">
+			And many of the comments from that video above. I plan to setup a form of some sort to accept
+			new suggestions when/if the app gets used by anyone else. And I hope people have as much fun
+			using it as I have had making it!
+		</p>
+		<p class="mt-8 italic max-md:font-extralight max-md:text-xs text-sm font-light">
+			*** P.S. CEO Joe and Millionaire Greg…. Please do not use all of your mighty wealth to come
+			after me, if there are any issues with logo or name use, please reach out to me directly and I
+			will take this whole thing down. Thank you!
 		</p>
 	</div>
 </div>
