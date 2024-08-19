@@ -13,7 +13,7 @@
 			playing The Basement Yard Bingo, but didn't decide to act on it until the section below for
 			their August 12th, 2024, podcast below:
 		</p>
-		<div class="mx-8 aspect-w-16 aspect-h-9">
+		<div class="my-12 aspect-w-16 aspect-h-9">
 			<iframe
 				class="self-center"
 				width="560"
