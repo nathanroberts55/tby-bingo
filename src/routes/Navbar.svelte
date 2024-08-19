@@ -24,8 +24,8 @@
 				class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
 			>
 				<li><a href="/">Play</a></li>
-				<li><a href="/">About</a></li>
-				<li><a href="/">Contact</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
 		<a href="/" class="btn btn-ghost font-anton font-extralight text-xl"
