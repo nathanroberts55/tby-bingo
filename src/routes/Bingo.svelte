@@ -3,6 +3,7 @@
 
 	let phrases = [];
 	let cells = [];
+	let loading = true; // Add a loading state
 	let letters = ['B', 'I', 'N', 'G', 'O'];
 	let winningPositions = [
 		[0, 1, 2, 3, 4],
@@ -16,6 +17,8 @@
 		[3, 8, 13, 18, 23],
 		[4, 9, 14, 19, 24]
 	];
+
+	const centerImageUrl = '/tby_logo_transparent_500x500.png'; // Replace with your large image URL
 
 	function shuffle(arr) {
 		let currentIndex = arr.length,
@@ -45,12 +48,15 @@
 	}
 
 	function handleClick(index) {
-		cells[index].strikeout = !cells[index].strikeout;
-		updateLetters();
+		if (index !== 12) {
+			// Prevent clicking on the center cell
+			cells[index].strikeout = !cells[index].strikeout;
+			updateLetters();
 
-		if (countWinningCombinations() === 5) {
-			alert('B I N G O');
-			location.reload();
+			if (countWinningCombinations() === 5) {
+				alert('B I N G O');
+				location.reload();
+			}
 		}
 	}
 
@@ -59,32 +65,51 @@
 		phrases = await response.json();
 		shuffle(phrases);
 		cells = phrases.slice(0, 25).map((phrase) => ({ num: phrase, strikeout: false }));
-		cells[12] = { num: 'Free', strikeout: true }; // Set the center cell as "Free"
+		cells[12] = { num: 'Free', strikeout: true, isCenter: true }; // Set the center cell as "Free" and mark it as the center
+		loading = false; // Set loading to false once phrases are populated
 	});
 </script>
 
 <div class="flex flex-col items-center">
-	<table class="border-collapse">
-		{#each Array(5) as _, i}
-			<tr>
-				{#each Array(5) as _, j}
-					<td
-						class="border border-neutral-content w-20 h-20 text-center cursor-pointer"
-						on:click={() => handleClick(i * 5 + j)}
-						class:strikeout={cells[i * 5 + j]?.strikeout}
-					>
-						{cells[i * 5 + j]?.num}
-					</td>
-				{/each}
-			</tr>
-		{/each}
-	</table>
+	{#if loading}
+		<div class="flex flex-col justify-center items-center h-64">
+			<span
+				class="loading loading-bars loading-lg -rotate-45
+			"
+			></span>
+			<p class="text-3xl max-md:text-2xl mt-10">Loading Custom Board...</p>
+		</div>
+	{:else}
+		<table class="border-collapse p-4">
+			{#each Array(5) as _, i}
+				<tr>
+					{#each Array(5) as _, j}
+						<td
+							class="border border-neutral-content max-md:w-20 max-md:h-20 w-28 h-28 text-center cursor-pointer max-md:text-sm p-2 max-md:p-0"
+							on:click={() => handleClick(i * 5 + j)}
+							class:strikeout={cells[i * 5 + j]?.strikeout}
+						>
+							{#if cells[i * 5 + j]?.isCenter}
+								<img
+									src={centerImageUrl}
+									alt="Free Space with Basement Yard Logo"
+									class="center-image bg-inherit"
+								/>
+							{:else}
+								{cells[i * 5 + j]?.num}
+							{/if}
+						</td>
+					{/each}
+				</tr>
+			{/each}
+		</table>
+	{/if}
 </div>
-<div class="mt-5">
+<div class="mt-5 max-md:mb-2 mb-8">
 	<table class="mx-auto">
 		<tr>
 			{#each letters as letter}
-				<td class="font-anton text-3xl mx-2" class:show-bingo={letter.includes('(show)')}
+				<td class="font-anton text-5xl max-md:text-4xl" class:show-bingo={letter.includes('(show)')}
 					>{letter.replace(' (show)', '')}</td
 				>
 			{/each}
@@ -95,6 +120,7 @@
 <style>
 	.strikeout {
 		text-decoration: line-through;
+		color: #fc1e26;
 	}
 	.show-bingo {
 		color: #fc1e26;
