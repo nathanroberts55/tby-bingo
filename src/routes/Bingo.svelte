@@ -56,12 +56,21 @@
 
 			if (countWinningCombinations() === 5) {
 				showModal = true; // Show the modal
+				triggerConfetti(); // Trigger confetti
 			}
 		}
 	}
 	function closeModal() {
 		showModal = false;
 		location.reload(); // Reload the page when the modal is closed
+	}
+
+	function triggerConfetti() {
+		confetti({
+			particleCount: 100,
+			spread: 70,
+			origin: { y: 0.6 }
+		});
 	}
 
 	onMount(async () => {
